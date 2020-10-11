@@ -1,4 +1,4 @@
-# VulkanViewer
+VulkanViewer
 ======================
 [![Build Status](https://travis-ci.com/hiergaut/VulkanViewer.svg?branch=main)](https://travis-ci.com/hiergaut/VulkanViewer)
 
