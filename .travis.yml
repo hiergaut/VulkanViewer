@@ -8,19 +8,19 @@ matrix:
       dist: xenial
       compiler: gcc
 
-    - name: "Linux clang"
-      os: linux
-      dist: xenial
-      compiler: clang
+    # - name: "Linux clang"
+    #   os: linux
+    #   dist: xenial
+    #   compiler: clang
 
-    - name: "macOS Xcode 10 (Makefiles)"
-      os: osx
-      osx_image: xcode10
-      env:
-
-    - name: "Visual studio 15 2017"
-      os: windows
-      env:
+    # - name: "macOS Xcode 10 (Makefiles)"
+    #   os: osx
+    #   osx_image: xcode10
+    #   env:
+    #
+    # - name: "Visual studio 15 2017"
+    #   os: windows
+    #   env:
 
 script:
     - mkdir build && cd build

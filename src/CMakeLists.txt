@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 #cmake_minimum_required(VERSION 3.5)
 
 #project(VulkanViewer VERSION 1.0 LANGUAGES CXX)
@@ -8,13 +8,20 @@ cmake_minimum_required(VERSION 3.5)
 
 #add_executable(VulkanViewer main.cpp)
 
-find_package(Vulkan REQUIRED)
+# ----------------------- VULKAN
+# Use FindVulkan module added with CMAKE 3.7
+if (NOT CMAKE_VERSION VERSION_LESS 3.7.0)
+        message(STATUS "Using module to find Vulkan")
+        find_package(Vulkan REQUIRED)
+endif()
+
 if (NOT Vulkan_FOUND)
     message(FATAL_ERROR "Failed to locate Vulkan SDK")
 else()
     message(STATUS "Vulkan include dirs : ${Vulkan_INCLUDE_DIRS}")
     message(STATUS "Vulkan lib : ${Vulkan_LIBRARIES}")
 endif()
+
 #find_package(glfw REQUIRED)
 #find_package(glm REQUIRED)
 
