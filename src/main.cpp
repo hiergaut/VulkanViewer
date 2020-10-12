@@ -8,10 +8,6 @@
 #include <glm/mat4x4.hpp>
 
 #include <iostream>
-//#include <vulkan/vulkan.h>
-//#include <vulkan/vulkan.hpp>
-//#include <vulkan/vk_layer.h>
-//#include <vulkan/vulkan_core.h>
 
 int main() {
     glfwInit();
@@ -21,10 +17,8 @@ int main() {
 
     uint32_t extensionCount = 0;
     vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
-//    vk::enumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
-//    vk::enumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
 
-    std::cout << extensionCount << " extensions supported\n";
+    std::cout << extensionCount << " extensions supported" << std::endl;
 
 //    glm::mat4 matrix;
 //    glm::vec4 vec;

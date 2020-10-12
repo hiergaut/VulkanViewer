@@ -1,11 +1,10 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 project(VulkanViewer VERSION 1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_subdirectory(src)
 #------------------ GLFW
 set(GLFW_BUILD_DOCS OFF CACHE BOOL "" FORCE)
 set(GLFW_BUILD_TESTS OFF CACHE BOOL "" FORCE)
@@ -13,5 +12,11 @@ set(GLFW_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)
 add_subdirectory(3rdparty/glfw)
 #add_subdirectory(3rdparty/glm)
 #add_subdirectory(3rdparty/Vulkan-Hpp)
+#add_subdirectory(3rdparty/Vulkan-Headers)
 
+#set(FUCK ${PROJECT_SOURCE_DIR}/3rdparty/Vulkan-Headers/include/)
+#set(FUCK ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/Vulkan-Hpp/vulkan/)
+#set(FUCK ${PROJECT_SOURCE_DIR}/3rdparty/Vulkan-Hpp/vulkan/)
+#set(BITCH ${PROJECT_SOURCE_DIR}/3rdparty/Vulkan-Hpp/Vulkan-Headers/include/)
 
+add_subdirectory(src)
