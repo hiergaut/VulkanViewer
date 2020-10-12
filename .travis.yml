@@ -23,7 +23,7 @@ matrix:
         #   env:
 
 before_script:
-    - sudo apt-get install -y libxrandr-dev libxinerama-dev
+    - sudo apt-get install -y libxrandr-dev libx11-xcb-dev
 
 script:
     - mkdir build && cd build
