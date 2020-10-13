@@ -18,9 +18,9 @@ matrix:
         #   osx_image: xcode10
         #   env:
         #
-        # - name: "Visual studio 15 2017"
-        #   os: windows
-        #   env:
+        - name: "Visual studio 15 2017"
+          os: windows
+          env:
 
 before_script:
     - sudo apt-get install -y libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev
