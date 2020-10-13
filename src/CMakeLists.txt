@@ -60,14 +60,15 @@ ENDIF()
 
 #find_package(glfw REQUIRED)
 #find_package(glm REQUIRED)
+set(OpenGL_GL_PREFERENCE "LEGACY")
+find_package(OpenGL REQUIRED)
 
 file(GLOB SOURCES *.cpp *.h *.hpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-#target_include_directories(${PROJECT_NAME} PUBLIC
-#    ${FUCK}
-#    ${BITCH}
-#    )
+target_include_directories(${PROJECT_NAME} PUBLIC
+    ${FUCK}
+    )
 #include_directories(${FUCK})
 #target_include_directories(${PROJECT_NAME} ${FUCK})
 
@@ -78,3 +79,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 #target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Vulkan)
 target_link_libraries(${PROJECT_NAME} PRIVATE ${Vulkan_LIBRARY})
 #target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Headers)
+#target_link_libraries(${PROJECT_NAME} PUBLIC ${OPENGL_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL)
+target_link_libraries(${PROJECT_NAME} PRIVATE glm)
