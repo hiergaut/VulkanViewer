@@ -73,11 +73,6 @@ find_package(OpenGL REQUIRED)
 file(GLOB SOURCES *.cpp *.h *.hpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
 
-#target_include_directories(${PROJECT_NAME} PUBLIC
-#    ${FUCK}
-#    )
-#include_directories(${FUCK})
-#target_include_directories(${PROJECT_NAME} ${FUCK})
 
 
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
