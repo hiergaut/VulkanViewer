@@ -22,7 +22,7 @@ matrix:
         #
         - name: "Visual studio 15 2017"
           os: windows
-		  arch: x64
+          arch: x64
           env:
 
 
