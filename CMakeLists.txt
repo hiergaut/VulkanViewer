@@ -14,7 +14,8 @@ add_subdirectory(3rdparty/glm)
 #add_subdirectory(3rdparty/Vulkan-Hpp)
 #add_subdirectory(3rdparty/Vulkan-Headers)
 
-include_directories(external/)
+#include_directories(external/)
+include_directories(include/)
 
 #set(FUCK ${PROJECT_SOURCE_DIR}/3rdparty/Vulkan-Headers/include/)
 #set(FUCK ${CMAKE_CURRENT_SOURCE_DIR}/3rdparty/Vulkan-Hpp/vulkan/)

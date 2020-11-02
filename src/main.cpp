@@ -8,6 +8,7 @@
 #include <glm/mat4x4.hpp>
 
 #include <iostream>
+//#include <vulkan/vulkan_core.h>
 
 int main() {
     glfwInit();
@@ -20,6 +21,7 @@ int main() {
 
     std::cout << extensionCount << " extensions supported" << std::endl;
 
+    
 //    glm::mat4 matrix;
 //    glm::vec4 vec;
 //    auto test = matrix * vec;

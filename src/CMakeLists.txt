@@ -21,10 +21,15 @@
 IF(UNIX AND NOT APPLE)
         set(LINUX TRUE)
 ENDIF()
-
+    
 IF(WIN32)
         IF (NOT Vulkan_FOUND)
-                find_library(Vulkan_LIBRARY NAMES vulkan-1 vulkan PATHS ${CMAKE_SOURCE_DIR}/lib/)
+                if (CMAKE_CL_64)
+					find_library(Vulkan_LIBRARY NAMES vulkan-1 vulkan PATHS ${CMAKE_SOURCE_DIR}/lib/lib64/)
+				else()
+					find_library(Vulkan_LIBRARY NAMES vulkan-1 vulkan PATHS ${CMAKE_SOURCE_DIR}/lib/lib32/)
+				endif()
+
                 IF (Vulkan_LIBRARY)
                         set(Vulkan_FOUND ON)
                         MESSAGE("Using bundled Vulkan library version")
