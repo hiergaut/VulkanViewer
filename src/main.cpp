@@ -8,7 +8,7 @@
 #include <glm/mat4x4.hpp>
 
 #include <iostream>
-//#include <vulkan/vulkan_core.h>
+#include <vulkan/vulkan_core.h>
 
 int main() {
     glfwInit();
