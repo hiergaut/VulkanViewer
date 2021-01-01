@@ -1,3 +1,5 @@
+message("----------------------------------------------------------")
+
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
 project(VulkanViewer VERSION 1.0 LANGUAGES CXX)
@@ -15,7 +17,7 @@ add_subdirectory(3rdparty/glm)
 #add_subdirectory(3rdparty/Vulkan-Headers)
 
 #include_directories(external/)
-include_directories(include/)
+#include_directories(include/)
 
 
 add_subdirectory(src)
