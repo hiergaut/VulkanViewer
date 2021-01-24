@@ -33,7 +33,7 @@ ENDIF()
 #message(STATUS "Vulkan_LIBRARIES : ${Vulkan_LIBRARIES}")
 #message(STATUS "Vulkan_LIBRARY : ${Vulkan_LIBRARY}")
 
-#find_package(Vulkan REQUIRED)
+find_package(Vulkan REQUIRED)
 
 if(NOT Vulkan_FOUND)
 #if(NOT TRUE)
