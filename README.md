@@ -11,10 +11,8 @@ Building
 ```
 git clone https://github.com/hiergaut/VulkanViewer.git
 cd VulkanViewer
-git submodule init
-git submodule update
-mkdir build
-cd build
+git submodule update --init --recursive
+mkdir build && cd build
 cmake ..
 cmake --build .
 ```

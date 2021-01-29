@@ -33,7 +33,7 @@ ENDIF()
 #message(STATUS "Vulkan_LIBRARIES : ${Vulkan_LIBRARIES}")
 #message(STATUS "Vulkan_LIBRARY : ${Vulkan_LIBRARY}")
 
-#find_package(Vulkan)
+find_package(Vulkan)
 
 if(NOT Vulkan_FOUND)
 #if(NOT TRUE)
@@ -45,7 +45,7 @@ if(NOT Vulkan_FOUND)
                     if (CMAKE_CL_64)
                             find_library(Vulkan_LIBRARIES NAMES vulkan-1.2.154.1 vulkan PATHS ${CMAKE_SOURCE_DIR}/usr/lib/)
                     else()
-                            find_library(Vulkan_LIBRARIES NAMES vulkan-1.2.154.1 vulkan PATHS ${CMAKE_SOURCE_DIR}/usr/lib/)
+                            find_library(Vulkan_LIBRARIES NAMES vulkan-1.2.154.1 vulkan PATHS ${CMAKE_SOURCE_DIR}/usr/lib32/)
                     endif()
 
                     IF (Vulkan_LIBRARIES)
