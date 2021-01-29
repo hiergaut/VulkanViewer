@@ -8,7 +8,7 @@ matrix:
           dist: xenial
           compiler: gcc
           before_script:
-            - sudo apt-get install -y libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan1
+            - sudo apt-get install -y libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan1 libvulkan-dev
 
         # - name: "Linux clang"
         #   os: linux

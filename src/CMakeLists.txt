@@ -37,7 +37,7 @@ find_package(Vulkan REQUIRED)
 
 if(NOT Vulkan_FOUND)
 #if(NOT TRUE)
-    message(STATUS "Could not find Vulkan library on system!")
+    message(FATAL_ERROR "Could not find Vulkan library on system!")
 
     IF(WIN32)
     #if(MSVC OR MSYS OR MINGW) #Windows compilers
