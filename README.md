@@ -4,8 +4,7 @@ VulkanViewer
 
 3D experimental viewer with Vulkan
 
-<!-- Supported platforms: -->
-Tested platforms:
+Supported platforms:
 
  <!-- * Android (14+, ARM, x86, MIPS) -->
  <!-- * asm.js/Emscripten (1.25.0) -->
@@ -20,18 +19,13 @@ Tested platforms:
  * Windows (10)
  <!-- * UWP (Universal Windows, Xbox One) -->
 
-Tested compilers:
+Supported compilers:
 
- * Clang 3.3 and above
- * GCC 5 and above
- * VS2017 and above
-
-Dependencies
--------------
-
-Linux :
- * Vulkan
-
+ <!-- * Clang 3.3 and above -->
+ <!-- * GCC 5 and above -->
+ * GCC 10 and above
+ <!-- * VS2017 and above -->
+ * MSVC 19 and above
 
 Building
 -------------
