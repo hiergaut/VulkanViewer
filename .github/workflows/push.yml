@@ -81,7 +81,10 @@ jobs:
         if: runner.os == 'Windows'
         run: |
           pwd
-          build\src\Debug\VulkanViewer.exe
+          ls build
+          ls build/src/
+          ls build/src/Debug
+          D:\a\VulkanViewer\VulkanViewer\build\src\Debug\VulkanViewer.exe
         
         
        
