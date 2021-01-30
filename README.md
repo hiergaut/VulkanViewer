@@ -37,9 +37,8 @@ Building
 -------------
 
 ```
-git clone https://github.com/hiergaut/VulkanViewer.git
+git clone --recurse-submodules -j8 https://github.com/hiergaut/VulkanViewer.git
 cd VulkanViewer
-git submodule update --init --recursive
 mkdir build && cd build
 cmake ..
 cmake --build .
