@@ -25,7 +25,7 @@ jobs:
       matrix:
         config: 
           - { name: "Windows Latest - MSVC", artifact: "windows-msvc.tar.xz", os: windows-latest, cc: "cl", cxx: "cl"}
-          - { name: "Ubuntu Latest - GCC", artifact: "linux-gcc.tar.xz", os: ubuntu-latest, cc: "gcc-9", cxx: "g++-9"}
+          #- { name: "Ubuntu Latest - GCC", artifact: "linux-gcc.tar.xz", os: ubuntu-latest, cc: "gcc-9", cxx: "g++-9"}
         #  - { name: "Ubuntu Latest - Clang", artifact: "linux-clang.tar.xz", os: ubuntu-latest, cc: "clang-9", cxx: "clang++-9"}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
@@ -77,9 +77,9 @@ jobs:
       - name: Linux run test 1
         if: runner.os == 'Linux'
         run: build/src/VulkanViewer   
-      - name: Windows run test 1
-        if: runner.os == 'Windows'
-        run: ./src/Debug/VulkanViewer.exe
+     # - name: Windows run test 1
+       # if: runner.os == 'Windows'
+       # run: ./src/Debug/VulkanViewer.exe
         
         
        
