@@ -34,12 +34,12 @@ jobs:
 
       # build project
       - name: mkdir
-        run: mkdir build
+        run: mkdir build && cd build
       - name: cmake build
-        run: cmake -Bbuild -H.
+        run: cmake ..
       - name: cmake make
-        run: cmake --build build/ --target all
+        run: cmake --build .
       # run tests
       - name: run test 1
-        run: build/src/VulkanViewer
+        run: src/VulkanViewer
         
