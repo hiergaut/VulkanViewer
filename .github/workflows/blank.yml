@@ -39,8 +39,8 @@ jobs:
       #- name: install dependencies
         #run: sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev
           #libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
-      - name: Windows set ENV
-        if: runner.os == 'Windows'
+      #- name: Windows set ENV
+        #if: runner.os == 'Windows'
         #uses: ilammy/msvc-dev-cmd@v1
 
       - name: Linux cache dependencies
