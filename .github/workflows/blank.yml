@@ -42,7 +42,7 @@ jobs:
         env:
           CACHE_HIT: ${{steps.cache-dependencies.outputs.cache-hit}}
         run: |
-          if [[ "$CACHE_HIT" == 'false' ]]; then
+          if [[ "$CACHE_HIT" == 'true' ]]; then
             sudo cp --force --recursive ~/dependencies/* /
           else
             sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
