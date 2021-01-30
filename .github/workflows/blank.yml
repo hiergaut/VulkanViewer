@@ -41,7 +41,7 @@ jobs:
           #libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
       - name: Windows set ENV
         if: runner.os == 'Windows'
-        uses: ilammy/msvc-dev-cmd@v1
+        #uses: ilammy/msvc-dev-cmd@v1
 
       - name: Linux cache dependencies
         if: runner.os == 'Linux'
@@ -74,8 +74,14 @@ jobs:
         run: cmake --build build --parallel
       
       # run tests
-      - name: run test 1
+      - name: Linux run test 1
+        if: runner.os == 'Linux'
         run: build/src/VulkanViewer
+      - name: Windows run test 1
+        if: runner.os == 'Windows'
+        run: build\src\VulkanViewer
+        
+        
        
       # upload artifact, example binary
       #- name: Upload Example binary
