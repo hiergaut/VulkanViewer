@@ -79,7 +79,9 @@ jobs:
         run: build/src/VulkanViewer
       - name: Windows run test 1
         if: runner.os == 'Windows'
-        run: build\src\VulkanViewer
+        run: |
+          ls
+          build/src/VulkanViewer.exe
         
         
        
