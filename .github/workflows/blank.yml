@@ -26,15 +26,38 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: recursive
+      
       # install dependencies
+      #- name: install dependencies
+        #run: sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev
+          #libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
+      - name: cache dependencies
+        uses: actions/cache@v1.0.3
+        id: cache-dependencies
+        with:
+          path: "~/dependencies"
+          key: libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
+     
       - name: install dependencies
-        run: sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev
-          libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
+        env:
+          CACHE_HIT: ${{steps.cache-dependencies.outputs.cache-hit}}
+        run: |
+          if [[ "$CACHE_HIT" == 'true' ]]; then
+            sudo cp --force --recursive ~/dependencies/* /
+          else
+            sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
+            mkdir -p ~/dependencies
+            for dep in libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev; do
+              dpkg -L $dep | while IFS= read -r f; do if test -f $f; then echo $f; fi; done | xargs cp --parents --target-directory ~/dependencies/
+            done
+          fi
+          
       # build project
       - name: cmake build
         run: mkdir build && cmake -Bbuild .
       - name: cmake make
         run: cmake --build build
+      
       # run tests
       - name: run test 1
         run: build/src/VulkanViewer
