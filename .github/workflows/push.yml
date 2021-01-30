@@ -79,12 +79,7 @@ jobs:
         run: build/src/VulkanViewer   
       - name: Windows run test 1
         if: runner.os == 'Windows'
-        run: |
-          pwd
-          ls build
-          ls build/src/
-          ls build/src/Debug
-          D:\a\VulkanViewer\VulkanViewer\build\src\Debug\VulkanViewer.exe
+        run: ./src/Debug/VulkanViewer.exe
         
         
        
