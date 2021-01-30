@@ -30,17 +30,12 @@ jobs:
       - name: install dependencies
         run: sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev
           libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
-          
-
-
       # build project
-      - name: mkdir
-        run: mkdir build
       - name: cmake build
-        run: cmake -Bbuild .
+        run: mkdir build && cmake -Bbuild .
       - name: cmake make
         run: cmake --build build
       # run tests
       - name: run test 1
-        run: src/VulkanViewer
+        run: build/src/VulkanViewer
         
