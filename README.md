@@ -1,6 +1,7 @@
 VulkanViewer
 ======================
-[![Build Status](https://travis-ci.com/hiergaut/VulkanViewer.svg?branch=main)](https://travis-ci.com/hiergaut/VulkanViewer)
+<!-- [![Build Status](https://travis-ci.com/hiergaut/VulkanViewer.svg?branch=main)](https://travis-ci.com/hiergaut/VulkanViewer) -->
+![example workflow name](https://github.com/hiergaut/VulkanViewer/workflows/CI/badge.svg)
 
 3D experimental viewer with Vulkan
 
