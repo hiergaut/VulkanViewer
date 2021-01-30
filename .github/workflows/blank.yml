@@ -36,7 +36,7 @@ jobs:
         id: cache-dependencies
         with:
           path: "~/dependencies"
-          key: libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
+          key: cache0
      
       - name: install dependencies
         env:
