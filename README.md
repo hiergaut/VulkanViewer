@@ -18,16 +18,16 @@ VulkanViewer
  <!-- * PlayStation 4 -->
  * RaspberryPi
  <!-- * Windows (XP, Vista, 7, 8, 10) -->
- * Windows (10)
+ * Windows 10
  <!-- * UWP (Universal Windows, Xbox One) -->
 
 ***Supported compilers:***
 
  <!-- * Clang 3.3 and above -->
  <!-- * GCC 5 and above -->
- * GCC 10 and above
+ * GCC 7.5 and above
  <!-- * VS2017 and above -->
- * MSVC 19 and above
+ * MSVC 14 and above
 
 Building
 -------------
