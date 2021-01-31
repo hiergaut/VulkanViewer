@@ -96,6 +96,7 @@ find_package(OpenGL REQUIRED)
 
 file(GLOB SOURCES *.cpp *.h *.hpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
+add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${Vulkan_INCLUDE_DIRS})
 
@@ -110,3 +111,4 @@ target_link_libraries(${PROJECT_NAME} PRIVATE ${Vulkan_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL)
 target_link_libraries(${PROJECT_NAME} PRIVATE glm)
 #target_link_libraries(${PROJECT_NAME} PRIVATE dl)
+
