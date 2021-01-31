@@ -97,6 +97,8 @@ find_package(OpenGL REQUIRED)
 file(GLOB SOURCES *.cpp *.h *.hpp)
 add_executable(${PROJECT_NAME} ${SOURCES})
 add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
+#add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ctest -C $<CONFIG> --verbose)
+#message(STATUS "${CONFIG}")
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${Vulkan_INCLUDE_DIRS})
 

@@ -78,7 +78,7 @@ jobs:
       
       # run tests
       - name: Run tests
-        run: cd build && ctest --verbose
+        run: cd build && ctest --verbose -C Debug
         # if: runner.os == 'Linux'
         # run: build/src/VulkanViewer
      # - name: Windows run test 1
