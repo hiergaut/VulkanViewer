@@ -11,6 +11,7 @@
 //#include <vulkan/vulkan_core.h>
 
 int main() {
+    return 0;
     glfwInit();
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
