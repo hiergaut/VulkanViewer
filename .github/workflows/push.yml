@@ -24,10 +24,11 @@ jobs:
       fail-fast: false
       matrix:
         config: 
-          #- { name: "Windows Latest - MSVC", artifact: "windows-msvc.tar.xz", os: windows-latest, cc: "cl", cxx: "cl"}
-          - { name: "Ubuntu Latest - GCC", artifact: "linux-gcc.tar.xz", os: ubuntu-latest, cc: "gcc-9", cxx: "g++-9"}
-        #  - { name: "Ubuntu Latest - Clang", artifact: "linux-clang.tar.xz", os: ubuntu-latest, cc: "clang-9", cxx: "clang++-9"}
-          - { name: "MacOS Latest", os: macos-latest}
+        - { name: "Windows Latest MSVC", artifact: "Windows-MSVC.tar.xz", os: windows-latest, build_type: "Release", cc: "cl", cxx: "cl", environment_script: "C:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Auxiliary/Build/vcvars64.bat"}
+        - { name: "Windows Latest MinGW", artifact: "Windows-MinGW.tar.xz", os: windows-latest, build_type: "Release", cc: "gcc", cxx: "g++"}
+        - { name: "Ubuntu Latest GCC", artifact: "Linux.tar.xz", os: ubuntu-latest, build_type: "Release", cc: "gcc", cxx: "g++"}
+        - { name: "macOS Latest Clang", artifact: "macOS.tar.xz", os: macos-latest, build_type: "Release", cc: "clang", cxx: "clang++"}
+
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -70,7 +71,7 @@ jobs:
           
       # build project
       - name: cmake build
-        run: mkdir build && cmake -Bbuild .
+        run: mkdir build && cmake -Bbuild . -DCMAKE_CXX_COMPILER=${{ matrix.config.cxx }} -DCMAKE_C_COMPILER=${{ matrix.config.cc }} -DCMAKE_BUILD_TYPE=${{ matrix.config.build_type }}
       - name: cmake make
         run: cmake --build build --parallel
       
