@@ -37,7 +37,7 @@ jobs:
         with:
           submodules: recursive
       
-       install dependencies
+       #install dependencies
       - name: Linux install dependencies
         if: runner.os == 'Linux'
         run: sudo apt-get update && sudo apt-get install -yq libxrandr-dev libxinerama-dev libx11-dev libxcursor-dev libxi-dev libgl1-mesa-dev libvulkan-dev
