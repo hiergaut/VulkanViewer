@@ -11,11 +11,11 @@
 //#include <vulkan/vulkan_core.h>
 
 int main() {
-    return 0;
+    //return 0;
     glfwInit();
 
     glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-//    GLFWwindow* window = glfwCreateWindow(800, 600, "Vulkan window", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(800, 600, "Vulkan window", nullptr, nullptr);
 
     uint32_t extensionCount = 0;
     vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
@@ -27,13 +27,13 @@ int main() {
 //    glm::vec4 vec;
 //    auto test = matrix * vec;
 
-//    while(!glfwWindowShouldClose(window)) {
-//        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
-//            glfwSetWindowShouldClose(window, true);
-//        }
+    while(!glfwWindowShouldClose(window)) {
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+            glfwSetWindowShouldClose(window, true);
+        }
 
-//        glfwPollEvents();
-//    }
+        glfwPollEvents();
+    }
 
 //    glfwDestroyWindow(window);
 

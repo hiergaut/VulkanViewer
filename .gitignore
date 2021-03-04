@@ -70,6 +70,6 @@ Thumbs.db
 *.exe
 
 CMakeLists.txt.user
-build/
+build*
 .vs/
 CMakeSettings.json
