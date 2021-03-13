@@ -1,7 +1,7 @@
 #cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
-#cmake_minimum_required(VERSION 3.5)
+#cmake_minimum_required(VERSION 3.7)
 
-#project(VulkanViewer VERSION 1.0 LANGUAGES CXX)
+project(src VERSION 1.0 LANGUAGES CXX)
 
 #set(CMAKE_CXX_STANDARD 11)
 #set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -102,14 +102,29 @@ ENDIF()
 set(OpenGL_GL_PREFERENCE "LEGACY")
 find_package(OpenGL REQUIRED)
 
+#find_package(SDL2 REQUIRED)
+#include_directories(${SDL2_INCLUDE_DIRS})
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O1 -march=native")
+#find_package(PkgConfig REQUIRED)
+find_package(SDL2 REQUIRED)
+#pkg_check_modules(SDL2 REQUIRED sdl2)
+#set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O1 -march=native")
+#add_executable(${PROJECT_NAME} ${todo})
+#target_include_directories(${PROJECT_NAME} PUBLIC ${SDL_INCLUDE_DIRS})
+
+
 file(GLOB SOURCES *.cpp *.h *.hpp)
-add_executable(${PROJECT_NAME} ${SOURCES})
+#add_executable(${PROJECT_NAME} ${SOURCES})
+add_library(${PROJECT_NAME} ${SOURCES})
 #add_test(NAME ${PROJECT_NAME} COMMAND ${PROJECT_NAME})
 #add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD COMMAND ctest -C $<CONFIG> --verbose)
 #message(STATUS "${CONFIG}")
 
 target_include_directories(${PROJECT_NAME} PUBLIC ${Vulkan_INCLUDE_DIRS})
 
+#target_link_libraries(${PROJECT_NAME} PRIVATE ${SDL2_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} PRIVATE SDL2)
+#target_compile_options(${PROJECT_NAME} PUBLIC ${SDL2_CFLAGS_OTHER})
 
 target_link_libraries(${PROJECT_NAME} PRIVATE glfw)
 #target_link_libraries(${PROJECT_NAME} PRIVATE ${VULKAN_LIB_LIST})
@@ -122,3 +137,6 @@ target_link_libraries(${PROJECT_NAME} PRIVATE OpenGL::GL)
 target_link_libraries(${PROJECT_NAME} PRIVATE glm)
 #target_link_libraries(${PROJECT_NAME} PRIVATE dl)
 
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_SOURCE_DIR}/src
+)

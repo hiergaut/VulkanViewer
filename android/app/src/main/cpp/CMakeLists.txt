@@ -12,11 +12,15 @@ project("myapplication")
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -DVK_USE_PLATFORM_ANDROID_KHR -DVK_NO_PROTOTYPES")
 
 set(CMAKE_DIR "../../../../..")
-set(SRC_DIR ${CMAKE_DIR}/src)
-file(GLOB EXAMPLE_SRC "${SRC_DIR}/*.cpp")
+#set(SRC_DIR ${CMAKE_DIR}/src)
+#file(GLOB EXAMPLE_SRC "${SRC_DIR}/*.cpp")
+file(GLOB EXAMPLE_SRC "./*.cpp")
+
 #file(GLOB LIB_VULKAN "${CMAKE_DIR}/usr/lib/libvulkan.so.1.2.135")
 #message(STATUS ${LIB_VULKAN})
 #message(FATAL_ERROR ${EXAMPLE_SRC})
+#add_subdirectory(${CMAKE_DIR}/)
+
 
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
@@ -30,6 +34,7 @@ add_library(native-lib SHARED ${EXAMPLE_SRC})
 #             SHARED
 #             # Provides a relative path to your source file(s).
 #             native-lib.cpp )
+#target_include_directories(native-lib )
 
 # Searches for a specified prebuilt library and stores the path as a
 # variable. Because CMake includes system libraries in the search path by
@@ -39,7 +44,6 @@ add_library(native-lib SHARED ${EXAMPLE_SRC})
 
 find_library( # Sets the name of the path variable.
               log-lib
-
               # Specifies the name of the NDK library that
               # you want CMake to locate.
               log )
